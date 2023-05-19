@@ -1,7 +1,7 @@
 def arithmetic_arranger(problems, answerYes = False):
     # Checking for correct input
     if len(problems) > 5:
-        arranged_problems = "Error: Too many problems"
+        arranged_problems = "Error: Too many problems."
         return arranged_problems
     
     array = [None] * 3
@@ -17,7 +17,7 @@ def arithmetic_arranger(problems, answerYes = False):
         firstOperand, operator, secondOperand = equation.split()
 
         if not (operator == '+' or operator == '-'):
-            arranged_problems = "Error: Operator must be '+' or '-'"
+            arranged_problems = "Error: Operator must be '+' or '-'."
             return arranged_problems
         
         if not firstOperand.isdigit() or not secondOperand.isdigit():
@@ -76,11 +76,11 @@ def arithmetic_arranger(problems, answerYes = False):
                 resultString4 +=  ' ' * (blockLength - len(str(resultarray[i]) )) + str(resultarray[i])
         
 
-    arranged_problems = resultString1 + '\n' + resultString2 + '\n' + resultString3 + '\n'
-    arranged_problems += resultString4 + '\n' if answerYes else ''
+    arranged_problems = resultString1 + '\n' + resultString2 + '\n' + resultString3
+    arranged_problems += '\n' + resultString4  if answerYes else ''
 
     #print(arranged_problems)
     return arranged_problems
 
-print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]))
+#print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]))
 #print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49", "3 - 3"], True))
